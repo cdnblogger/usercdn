@@ -1,0 +1,60 @@
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900' rel='stylesheet' type='text/css'/>
+<style>
+body {
+  background:transparent;
+  margin:0;
+  padding:0;
+  color:#212121;font-family:Roboto,sans-serif;
+}
+#parser{position:relative;margin-top:20px}
+#codes{border:1px solid #ededef;width:100%;height:150px;display:block;background-color:#fafafa;border-radius:4px;font:400 11px 'Fira Mono',monospace;resize:none;margin:0 0 10px;padding:10px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;box-shadow:none}
+#codes:active,#codes:focus{background-color:#f5f5f5;color:#444;outline:0}
+.btn-xs{font-family:var(--font-name);font-size:12px;line-height:1.5;border-radius:2px;padding:1px 5px;border:none;color:#fff;outline:0;cursor:pointer}
+.btn-primary{background-color:var(--main-btn-color);margin-bottom: 10px;}
+.btn-danger{background-color:var(--clean-btn-color)}
+.btn-info{background-color:var(--copy-btn-color)}
+.btn-primary:active, .btn-primary:hover, .parser:active, .parser:hover, .btn-primary:focus, .button-group button:disabled, .parser:focus{opacity:.9}
+.btn-danger:active, .btn-danger:hover{opacity:.9}
+.btn-info:active, .btn-info:hover{opacity:.9}
+.alert{padding:6px;border-radius:4px;position:absolute;top:10px;right:10px;min-width:100px}
+.alert span{font-size:12px}
+.alert-success{color:#3c763d;background-color:rgba(215,236,206,.58)}
+.closer{float:right;margin-top:3px;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.2}
+button.closer{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance:none;line-height:1}
+.checkbox{display:none}
+</style>
+<div id='parser'>
+<textarea id='codes' placeholder='Masukkan kode / url_gambar lalu klik tombol di bawah ini untuk di parse' spellcheck='false'/>
+<div class='alert alert-success margin-bottom-20 collapse' id='btnInfo' role='alert' style='display: none;'>
+<button class='closer close-copy' onclick='document.getElementById(&quot;btnInfo&quot;).style.display = &quot;none&quot;;cdClear();' type='button'><span aria-hidden='true'>&#215;</span></button>
+<span>Kode Tersalin!</span>
+</div>
+<span class='button-group'>
+<button class='btn btn-primary btn-xs' id='cvrt3' onclick='imgConvert();this.disabled = true;'>image</button>
+<button class='btn btn-primary btn-xs' id='cvrt4' onclick='preConvert();this.disabled = true;'>pre</button>
+<button class='btn btn-primary btn-xs' id='cvrt5' onclick='codeConvert();this.disabled = true;'>code</button>
+<button class='btn btn-primary btn-xs' id='cvrt7' onclick='quoteConvert();this.disabled = true;'>quote</button><br/>
+<button class='btn button-link btn-xs btn-info' data-clipboard-action='copy' data-clipboard-target='#codes' id='button-link' style='display: none;' type='submit'>Salin Kode!</button>
+<button class='btn btn-danger btn-xs' onclick='cdClear();'>Bersihkan</button>
+</span>
+<span class='checkbox'>
+<input checked='' id='opt1' type='checkbox'/>
+<input checked='' id='opt2' type='checkbox'/>
+<input checked='' id='opt3' type='checkbox'/>
+<input checked='' id='opt4' type='checkbox'/>
+<input checked='' id='opt5' type='checkbox'/><br/>
+<input checked='' id='opt6' type='checkbox'/>
+<span>image</span>
+<input checked='' id='opt7' type='checkbox'/>
+<span>quote</span>
+<input checked='' id='opt8' type='checkbox'/>
+<span>pre</span>
+<input checked='' id='opt9' type='checkbox'/>
+<span>code</span>
+</span>
+<script src='https://cdn.statically.io/gh/zenorocha/clipboard.js/v1.5.16/dist/clipboard.min.js'></script>
+<script>
+//<![CDATA[
+function cdClear(){var e=document.getElementById("codes");e.value="",e.focus();for(var t=document.querySelectorAll("#cvrt3, #cvrt4, #cvrt5, #cvrt6, #cvrt7, #cvrt8, #cvrt9, #cvrt10, #cvrt11"),c=0;c<t.length;c++)t[c].disabled=!1,document.getElementById("btnInfo").style.display="none",document.getElementById("button-link").style.display="none"}function preConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),l=document.getElementById("opt2"),n=document.getElementById("opt3"),o=document.getElementById("opt4"),d=document.getElementById("opt5"),u=document.getElementById("opt8");t=t.replace(/\t/g,"    ");u.checked&&(c.checked&&(t=t.replace(/&/g,"&amp;")),l.checked&&(t=t.replace(/'/g,"&#039;")),n.checked&&(t=t.replace(/"/g,"&quot;")),o.checked&&(t=t.replace(/</g,"&lt;")),d.checked&&(t=t.replace(/>/g,"&gt;")),t=(t=t.replace(/^/,"<i rel='pre'>")).replace(/$/,"</i>"),e.value=t,e.focus(),document.getElementById("button-link").style.display="inline-block")}function codeConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),l=document.getElementById("opt2"),n=document.getElementById("opt3"),o=document.getElementById("opt4"),d=document.getElementById("opt5"),u=document.getElementById("opt9");t=t.replace(/\t/g,"    ");u.checked&&(c.checked&&(t=t.replace(/&/g,"&amp;")),l.checked&&(t=t.replace(/'/g,"&#039;")),n.checked&&(t=t.replace(/"/g,"&quot;")),o.checked&&(t=t.replace(/</g,"&lt;")),d.checked&&(t=t.replace(/>/g,"&gt;")),t=(t=t.replace(/^/,"<i rel='code'>")).replace(/$/,"</i>"),e.value=t,e.focus(),document.getElementById("button-link").style.display="inline-block")}function imgConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt6");t=t.replace(/\t/g,"    ");c.checked&&(t=(t=t.replace(/^/,"<i rel='img'>")).replace(/$/,"</i>"),e.value=t,e.focus(),document.getElementById("button-link").style.display="inline-block")}function quoteConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt7");t=t.replace(/\t/g,"    ");c.checked&&(t=(t=t.replace(/^/,"<b rel='quote'>")).replace(/$/,"</b>"),e.value=t,e.focus(),document.getElementById("button-link").style.display="inline-block")}var clipboard=new Clipboard(".button-link");clipboard.on("success",function(e){console.log(e),document.getElementById("btnInfo").style.display="block",document.getElementById("codes").value=""}),clipboard.on("error",function(e){console.log(e)}); function repText(id) {var a = document.getElementById(id); if (!a) return; var b = a.innerHTML; b = b.replace(/<i rel="img">(.*?)<\/i>/ig, "<img class='lazy cm-image' data-src='$1' src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=' alt='loading...' \/>"); b = b.replace(/<i rel="pre">(.*?)<\/i>/ig, "<pre><code>$1<\/code><\/pre>"); b = b.replace(/<i rel="code">(.*?)<\/i>/ig, "<pre><code>$1<\/code><\/pre>"); b = b.replace(/<b rel="quote">(.*?)<\/b>/ig, "<blockquote>$1<\/blockquote>"); a.innerHTML = b;} repText('comment-holder');
+///]]>
+</script>
