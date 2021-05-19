@@ -1,0 +1,62 @@
+{
+  "name": "Ust Ujang",
+  "short_name": "Ust Ujang",
+  "display": "standalone",
+  "prefer_related_applications": false,
+  "start_url": ".",
+  "scope": "/",
+  "background_color": "#fff",
+  "theme_color": "#252746",
+  "description": "Blog Ustadz Ujang Ismatullah, tentang permasalahan Agama Islam ",
+  "icons": [
+    {
+      "src": "https://1.bp.blogspot.com/-BFHVyNy8-6E/YKUIC7UmkEI/AAAAAAAAVAM/eAjmvQS6BWUL_Ox_pLi0T7ziLbTkpEKfwCLcBGAsYHQ/s36/uis-512.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": "0.75",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://1.bp.blogspot.com/-BFHVyNy8-6E/YKUIC7UmkEI/AAAAAAAAVAM/eAjmvQS6BWUL_Ox_pLi0T7ziLbTkpEKfwCLcBGAsYHQ/s48/uis-512.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "density": "1.0",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://1.bp.blogspot.com/-BFHVyNy8-6E/YKUIC7UmkEI/AAAAAAAAVAM/eAjmvQS6BWUL_Ox_pLi0T7ziLbTkpEKfwCLcBGAsYHQ/s72/uis-512.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": "1.5",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://1.bp.blogspot.com/-BFHVyNy8-6E/YKUIC7UmkEI/AAAAAAAAVAM/eAjmvQS6BWUL_Ox_pLi0T7ziLbTkpEKfwCLcBGAsYHQ/s96/uis-512.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": "2.0",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://1.bp.blogspot.com/-BFHVyNy8-6E/YKUIC7UmkEI/AAAAAAAAVAM/eAjmvQS6BWUL_Ox_pLi0T7ziLbTkpEKfwCLcBGAsYHQ/s144/uis-512.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": "3.0",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://1.bp.blogspot.com/-BFHVyNy8-6E/YKUIC7UmkEI/AAAAAAAAVAM/eAjmvQS6BWUL_Ox_pLi0T7ziLbTkpEKfwCLcBGAsYHQ/s192/uis-512.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": "4.0",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://1.bp.blogspot.com/-BFHVyNy8-6E/YKUIC7UmkEI/AAAAAAAAVAM/eAjmvQS6BWUL_Ox_pLi0T7ziLbTkpEKfwCLcBGAsYHQ/s512/uis-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "density": "4.0",
+      "purpose": "any maskable"
+    }
+  ]
+}
